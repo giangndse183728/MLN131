@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, PanInfo, useMotionValue, useTransform } from 'motion/react';
 // replace icons with your own if needed
-import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from 'react-icons/fi';
+import { Circle, Code, FileText, Layers, Layout } from 'lucide-react';
 import './Carousel.css';
 
 export interface CarouselItem {
@@ -26,31 +26,31 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     title: 'Text Animations',
     description: 'Cool text animations for your projects.',
     id: 1,
-    icon: <FiFileText className="carousel-icon" />
+    icon: <FileText className="carousel-icon" />
   },
   {
     title: 'Animations',
     description: 'Smooth animations for your projects.',
     id: 2,
-    icon: <FiCircle className="carousel-icon" />
+    icon: <Circle className="carousel-icon" />
   },
   {
     title: 'Components',
     description: 'Reusable components for your projects.',
     id: 3,
-    icon: <FiLayers className="carousel-icon" />
+    icon: <Layers className="carousel-icon" />
   },
   {
     title: 'Backgrounds',
     description: 'Beautiful backgrounds and patterns for your projects.',
     id: 4,
-    icon: <FiLayout className="carousel-icon" />
+    icon: <Layout className="carousel-icon" />
   },
   {
     title: 'Common UI',
     description: 'Common UI components are coming soon!',
     id: 5,
-    icon: <FiCode className="carousel-icon" />
+    icon: <Code className="carousel-icon" />
   }
 ];
 
@@ -142,11 +142,11 @@ export default function Carousel({
   const dragProps = loop
     ? {}
     : {
-        dragConstraints: {
-          left: -trackItemOffset * (carouselItems.length - 1),
-          right: 0
-        }
-      };
+      dragConstraints: {
+        left: -trackItemOffset * (carouselItems.length - 1),
+        right: 0
+      }
+    };
 
   return (
     <div
@@ -190,10 +190,12 @@ export default function Carousel({
               transition={effectiveTransition}
             >
               <div className={`carousel-item-header ${round ? 'round' : ''}`}>
-                <span className="carousel-icon-container">{item.icon}</span>
+                <div className="carousel-title-row">
+                  <span className="carousel-icon-container">{item.icon}</span>
+                  <div className="carousel-item-title">{item.title}</div>
+                </div>
               </div>
               <div className="carousel-item-content">
-                <div className="carousel-item-title">{item.title}</div>
                 <p className="carousel-item-description">{item.description}</p>
               </div>
             </motion.div>

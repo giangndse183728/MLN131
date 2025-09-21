@@ -21,7 +21,7 @@
   justify-content: space-between;
   border: 1px solid #555;
   border-radius: calc(var(--outer-r) - var(--p-distance));
-  background-color: #0d0d0d;
+  background-color: #fff;
   overflow: hidden;
   cursor: grab;
 }
@@ -35,7 +35,7 @@
 }
 
 .carousel-item.round {
-  background-color: #0d0d0d;
+  background-color: #fff;
   position: relative;
   bottom: 0.1em;
   border: 1px solid #555;
@@ -71,6 +71,12 @@
   padding-top: 20px;
 }
 
+.carousel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .carousel-icon-container {
   display: flex;
   height: 28px;
@@ -78,13 +84,18 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #81181a;
 }
 
 .carousel-icon {
   height: 16px;
   width: 16px;
-  color: #060010;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-item-content {
@@ -93,15 +104,19 @@
 }
 
 .carousel-item-title {
-  margin-bottom: 4px;
-  font-weight: 900;
-  font-size: 18px;
-  color: #fff;
+  margin-bottom: 0;
+  font-family: 'Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #81181a;
+  flex: 1;
 }
 
 .carousel-item-description {
-  font-size: 14px;
-  color: #fff;
+  font-family: 'Serif', serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.625;
 }
 
 .carousel-indicators-container {
@@ -127,7 +142,7 @@
 }
 
 .carousel-indicator.active {
-  background-color: #fff;
+  background-color: #81181a;
 }
 
 .carousel-indicator.inactive {
