@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
+import { 
   ClientAnimatedSection,
   MotionDiv,
   MotionH2,
@@ -59,13 +59,13 @@ export default function DanChuXaHoiChuNghiaPage() {
         {/* Header */}
         <FadeUp className="text-center mb-16">
           <MotionH2 className="font-sans text-4xl md:text-5xl text-black mb-6">
-            <span className="text-black font-primary">DÂN CHỦ XÃ HỘI</span>
-            <span className="text-red-900 font-primary"> CHỦ NGHĨA</span>
+            <span className="text-black">DÂN CHỦ XÃ HỘI</span>
+            <span className="text-red-900"> CHỦ NGHĨA</span>
           </MotionH2>
           <MotionP className="font-serif text-lg text-black/70 max-w-3xl mx-auto leading-relaxed mb-8">
             Bản chất chế độ ta, vừa mục tiêu vừa động lực phát triển
           </MotionP>
-
+          
           {/* Breadcrumb */}
           <div className="flex justify-center items-center space-x-2 text-sm">
             <Link href="/" className="text-red-900 hover:text-red-800 transition-colors">
@@ -86,27 +86,27 @@ export default function DanChuXaHoiChuNghiaPage() {
             <MotionH2 className="font-sans text-[1.75rem] font-bold text-gray-800 mb-8 text-center">
               Sự ra đời, phát triển của nền dân chủ xã hội chủ nghĩa ở Việt Nam
             </MotionH2>
-
+            
             {/* Timeline */}
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-300"></div>
-
+              
               <div className="space-y-8">
                 {timelineEvents.map((event, index) => (
                   <FadeUp key={index} delay={0.3 + index * 0.1}>
                     <div className="relative flex items-start group">
                       {/* Timeline dot with image */}
                       <div className="w-12 h-12 rounded-full border-2 border-red-600 bg-white z-10 flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                        <Image
-                          src="/vn.png"
-                          alt="Cờ Việt Nam"
-                          width={24}
+                        <Image 
+                          src="/vn.png" 
+                          alt="Cờ Việt Nam" 
+                          width={24} 
                           height={16}
                           className="rounded-full"
                         />
                       </div>
-
+                      
                       {/* Content */}
                       <div className="ml-6 flex-1">
                         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-gray-100">
@@ -134,10 +134,10 @@ export default function DanChuXaHoiChuNghiaPage() {
               <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-center">
                   <div className="mb-4">
-                    <Image
-                      src="/vn.png"
-                      alt="Cờ Việt Nam"
-                      width={40}
+                    <Image 
+                      src="/vn.png" 
+                      alt="Cờ Việt Nam" 
+                      width={40} 
                       height={26}
                       className="mx-auto"
                     />
@@ -150,7 +150,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   </div>
                 </div>
               </div>
-
+              
               {/* Right box - Quote */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex-1 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-gray-800 italic text-base leading-relaxed">
@@ -173,10 +173,10 @@ export default function DanChuXaHoiChuNghiaPage() {
               <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-center">
                   <div className="mb-4">
-                    <Image
-                      src="/vn.png"
-                      alt="Cờ Việt Nam"
-                      width={40}
+                    <Image 
+                      src="/vn.png" 
+                      alt="Cờ Việt Nam" 
+                      width={40} 
                       height={26}
                       className="mx-auto"
                     />
@@ -189,7 +189,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   </div>
                 </div>
               </div>
-
+              
               {/* Right box - Characteristics */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex-1 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-gray-800 italic text-base leading-relaxed">
@@ -210,10 +210,10 @@ export default function DanChuXaHoiChuNghiaPage() {
               <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-center">
                   <div className="mb-4">
-                    <Image
-                      src="/vn.png"
-                      alt="Cờ Việt Nam"
-                      width={40}
+                    <Image 
+                      src="/vn.png" 
+                      alt="Cờ Việt Nam" 
+                      width={40} 
                       height={26}
                       className="mx-auto"
                     />
@@ -226,7 +226,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   </div>
                 </div>
               </div>
-
+              
               {/* Right box - Goals */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex-1 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-gray-800 italic text-base leading-relaxed">
@@ -245,16 +245,16 @@ export default function DanChuXaHoiChuNghiaPage() {
             <MotionH2 className="font-sans text-[1.75rem] font-bold text-gray-800 mb-8 text-center">
               Bản chất của nền dân chủ xã hội chủ nghĩa ở Việt Nam
             </MotionH2>
-
+            
             <div className="flex items-center justify-center space-x-6">
               {/* Left box - Hồ Chí Minh */}
               <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-center">
                   <div className="mb-4">
-                    <Image
-                      src="/vn.png"
-                      alt="Cờ Việt Nam"
-                      width={40}
+                    <Image 
+                      src="/vn.png" 
+                      alt="Cờ Việt Nam" 
+                      width={40} 
                       height={26}
                       className="mx-auto"
                     />
@@ -265,7 +265,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   </div>
                 </div>
               </div>
-
+              
               {/* Right box - Quote */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex-1 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-gray-800 font-serif text-base leading-relaxed">
@@ -297,10 +297,10 @@ export default function DanChuXaHoiChuNghiaPage() {
               <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="text-center">
                   <div className="mb-4">
-                    <Image
-                      src="/vn.png"
-                      alt="Cờ Việt Nam"
-                      width={40}
+                    <Image 
+                      src="/vn.png" 
+                      alt="Cờ Việt Nam" 
+                      width={40} 
                       height={26}
                       className="mx-auto"
                     />
@@ -312,14 +312,14 @@ export default function DanChuXaHoiChuNghiaPage() {
                   </div>
                 </div>
               </div>
-
+              
               {/* Right box - 5 đặc điểm */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex-1 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                     <p className="text-gray-700 font-serif text-base leading-relaxed">
-                      Dân chủ là <span className="text-red-700 font-bold">mục tiêu</span> của chế độ XHCN
+                      Dân chủ là <span className="text-red-700 font-bold">mục tiêu</span> của chế độ XHCN 
                       (<span className="text-red-700 font-bold">dân giàu, nước mạnh, dân chủ, công bằng, văn minh</span>).
                     </p>
                   </div>
@@ -327,7 +327,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                     <p className="text-gray-700 font-serif text-base leading-relaxed">
-                      Dân chủ là <span className="text-red-700 font-bold">bản chất</span> của chế độ XHCN
+                      Dân chủ là <span className="text-red-700 font-bold">bản chất</span> của chế độ XHCN 
                       (do nhân dân làm chủ, quyền lực thuộc về nhân dân).
                     </p>
                   </div>
@@ -335,7 +335,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                     <p className="text-gray-700 font-serif text-base leading-relaxed">
-                      Dân chủ là <span className="text-red-700 font-bold">động lực</span> để xây dựng CNXH
+                      Dân chủ là <span className="text-red-700 font-bold">động lực</span> để xây dựng CNXH 
                       (phát huy sức mạnh của nhân dân, của dân tộc).
                     </p>
                   </div>
@@ -365,14 +365,14 @@ export default function DanChuXaHoiChuNghiaPage() {
             <MotionH2 className="font-sans text-[1.75rem] font-bold text-gray-800 mb-8 text-center">
               Cơ chế thực hiện dân chủ
             </MotionH2>
-
+            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Gián tiếp */}
               <div className="space-y-4">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
                   <span className="text-red-700 font-sans font-bold text-lg">Gián tiếp</span>
                 </div>
-
+                
                 <div className="space-y-4">
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
@@ -382,7 +382,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
@@ -391,7 +391,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
@@ -408,7 +408,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
                   <span className="text-red-700 font-sans font-bold text-lg">Trực tiếp</span>
                 </div>
-
+                
                 <div className="space-y-4">
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
@@ -418,7 +418,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
@@ -427,7 +427,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
@@ -436,7 +436,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                       </p>
                     </div>
                   </div>
-
+                  
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-red-700 rounded-full mt-2 mr-4 flex-shrink-0"></div>
@@ -457,21 +457,21 @@ export default function DanChuXaHoiChuNghiaPage() {
             <MotionH2 className="font-sans text-[1.75rem] font-bold text-gray-800 mb-8 text-center">
               Thiết chế thực hiện dân chủ
             </MotionH2>
-
+            
             {/* Central content with icon */}
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-4">
-                <Image
-                  src="/vn.png"
-                  alt="Cờ Việt Nam"
-                  width={50}
+                <Image 
+                  src="/vn.png" 
+                  alt="Cờ Việt Nam" 
+                  width={50} 
                   height={33}
                   className="rounded-full"
                 />
               </div>
               <h3 className="text-red-700 font-sans font-bold text-xl mb-4">Thiết chế thực hiện dân chủ</h3>
             </div>
-
+            
             {/* Three column layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Column 1 - Nhà nước */}
@@ -513,7 +513,7 @@ export default function DanChuXaHoiChuNghiaPage() {
                 </p>
               </div>
             </div>
-
+            
             {/* Bottom explanation */}
             <div className="mt-8 bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
               <div className="text-center">
@@ -531,7 +531,7 @@ export default function DanChuXaHoiChuNghiaPage() {
             <MotionH2 className="font-sans text-xl font-bold text-black mb-6">
               Khám phá thêm
             </MotionH2>
-
+            
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/noidung/nha-nuoc-phap-quyen-xhcn"
