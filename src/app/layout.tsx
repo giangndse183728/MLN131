@@ -1,5 +1,7 @@
 
 
+'use client';
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
@@ -8,19 +10,9 @@ import { Noto_Serif_Display, Be_Vietnam_Pro } from 'next/font/google';
 import Script from "next/script";
 import ChatSpeedDial from "@/features/chatbot/components/chat-speed-dial";
 import MusicPlayer from "@/components/ui/music-player";
+import { usePathname } from 'next/navigation';
 
 
-export const metadata = {
-  title: "MLN131 | Dân Chủ XHCN & Nhà Nước Pháp Quyền XHCN",
-  description: "Dân Chủ Xã Hội Chủ Nghĩa và Nhà Nước Pháp Quyền XHCN Ở Việt Nam",
-  keywords: ["dân chủ xã hội chủ nghĩa", "nhà nước pháp quyền", "xhcn", "việt nam"],
-  image: {
-    url: "/vn.png",
-    width: 1200,
-    height: 630,
-    alt: "Dân Chủ Xã Hội Chủ Nghĩa và Nhà Nước Pháp Quyền XHCN Ở Việt Nam",
-  },
-};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +50,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  
+  // Define routes that should not use the default layout
+  const routesWithoutLayout = [
+    '/baotang',
+    '/admin',
+    '/standalone',
+    '/minimal'
+  ];
+  
+  const noLayout = routesWithoutLayout.includes(pathname) 
+    || pathname.startsWith("/admin")
+    || pathname.startsWith("/baotang");
 
   return (
     <html lang="en">
@@ -68,7 +73,14 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/vn.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSerifDisplay.variable} ${beVietnamPro.variable} antialiased text-gray-900 overlay-scroll`}>
-   
+        {noLayout ? (
+          <main className="flex-1 relative z-10">
+            <div className="absolute inset-0 bg-[url('/background.jpg')] bg-cover bg-center bg-fixed opacity-95 pointer-events-none"></div>
+            <div className="relative z-10">
+              {children}
+            </div>
+          </main>
+        ) : (
           <div className="flex flex-col min-h-screen relative">
             <div className="fixed bottom-0 left-0 w-[150px] h-[150px] pointer-events-none z-20">
               <div className="absolute bottom-0 left-0 w-[3px] h-[60px] bg-gradient-to-t from-[rgba(190,0,0,0.8)] to-transparent"></div>
@@ -91,6 +103,7 @@ export default function RootLayout({
             <ChatSpeedDial />
             <MusicPlayer />
           </div>
+        )}
         
         
         <Script id="font-optimization" strategy="afterInteractive">
