@@ -9,13 +9,32 @@ import {
   FadeUp,
 } from '../../../components/animation/AnimatedWrapper';
 
+interface Subsection {
+  title: string;
+  points: string[];
+}
+
+interface Feature {
+  number: string;
+  title: string;
+  description: string;
+}
+
+interface Section {
+  title: string;
+  content: string;
+  subsections?: Subsection[];
+  features?: Feature[];
+  points?: string[];
+}
+
 export const metadata: Metadata = {
   title: 'Nhà Nước Pháp Quyền XHCN Việt Nam | Hệ Thống Pháp Luật',
   description: 'Tìm hiểu về nhà nước pháp quyền xã hội chủ nghĩa Việt Nam - quản lý xã hội bằng pháp luật, đề cao Hiến pháp.',
   keywords: ['nhà nước pháp quyền', 'hiến pháp việt nam', 'pháp luật việt nam', 'quản lý xã hội'],
 };
 
-const sections = [
+const sections: Section[] = [
   {
     title: "2.1. Quan niệm về nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam",
     content: "Quan niệm về nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam được hình thành và phát triển qua các giai đoạn lịch sử, từ quan niệm chung đến cách hiểu hiện nay và chủ trương của Đảng.",
@@ -175,7 +194,7 @@ export default function NhaNuocPhapQuyenXHCNPage() {
                         </FadeUp>
                       ))}
                     </div>
-                  ) : (
+                  ) : section.points ? (
                     /* Render regular points if no subsections or features */
                     <div className="space-y-4">
                       {section.points.map((point, pointIndex) => (
@@ -187,7 +206,7 @@ export default function NhaNuocPhapQuyenXHCNPage() {
                         </FadeUp>
                       ))}
                     </div>
-                  )}
+                  ) : null}
                 </MotionDiv>
               </FadeUp>
             </div>
