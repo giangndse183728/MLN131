@@ -10,7 +10,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const ROUTES = {
     NOIDUNG: "/noidung",
     VIDEO: "/video",
-    GAME: "/game"
+    GAME: "/game",
+    MUSIC:"/music"
 };
 
 
@@ -125,7 +126,8 @@ const Navbar = () => {
             {[
               { name: "Nội Dung", path: ROUTES.NOIDUNG},
               { name: "Video", path: ROUTES.VIDEO },
-              { name: "Game", path: ROUTES.GAME }
+              { name: "Game", path: ROUTES.GAME },
+              { name: "Music", path: ROUTES.MUSIC }
             ].map((item, index) => (
               <Link
                 key={item.name}
@@ -136,7 +138,7 @@ const Navbar = () => {
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-red-900 group-hover:w-full transition-all duration-300"></span>
                 </span>
-                {index < 4 && (
+                {index < 3 && (
                   <span className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-black/40">/</span>
                 )}
               </Link>
@@ -190,9 +192,10 @@ const Navbar = () => {
               {/* Mobile menu items */}
               <div className="space-y-0">
                 {[
-                  { name: "DÂN CHỦ XÃ HỘI CHỦ NGHĨA", path: ROUTES.NOIDUNG },
-                  { name: "NHÀ NƯỚC PHÁP QUYỀN XHCN", path: ROUTES.VIDEO },
-                  { name: "PHÁT HUY DÂN CHỦ", path: ROUTES.GAME }
+                  {name: "Nội Dung", path: ROUTES.NOIDUNG },
+                  {name: "Video", path: ROUTES.VIDEO },
+                  {name: "Game", path: ROUTES.GAME },
+                  {name: "Music", path: ROUTES.MUSIC }
                 ].map((item) => (
                   <Link
                     key={item.name}
