@@ -166,7 +166,7 @@ const SubHeroSection = () => {
                     asChild
                     size={'lg'}
                   >
-                    <a href="/phat-huy-dan-chu-xay-dung-nha-nuoc-phap-quyen">Tìm hiểu thêm</a>
+                    <a href="/video">Tìm hiểu thêm</a>
                   </Button>
               </div>
             </FadeUp>
