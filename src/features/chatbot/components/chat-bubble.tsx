@@ -28,7 +28,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message  }) => {
   return (
     <div className="flex w-full mb-6 justify-start">
       <div className="max-w-[85%] bg-transparent text-gray-900">
-        <div className="text-xs text-[#600] mb-1 font-bold font-cinzel border-b border-[#600]/30 pb-1">MLN-AI Response!:</div>
+        <div className="text-xs text-[#600] mb-1 font-bold font-cinzel border-b border-[#600]/30 pb-1">MLN-AI Response: hehehehehe</div>
         <div className="text-sm font-serif leading-relaxed whitespace-pre-line p-2">
           {message.content.split('\n').map((paragraph, i) => (
             paragraph.trim() ? (
