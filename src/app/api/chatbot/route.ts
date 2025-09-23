@@ -46,30 +46,10 @@ export async function POST(request: NextRequest) {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
       
-      // System prompt to guide the conversation about Vietnamese political system
-      const systemPrompt = `Bạn là một chuyên gia về hệ thống chính trị Việt Nam và chủ nghĩa xã hội. Hãy thảo luận chi tiết về ba chủ đề chính sau đây một cách khách quan, học thuật và cân bằng:
-
-I. DÂN CHỦ VÀ DÂN CHỦ XÃ HỘI CHỦ NGHĨA
-- Khái niệm dân chủ nói chung và dân chủ xã hội chủ nghĩa
-- Đặc điểm, nguyên tắc và hình thức của dân chủ xã hội chủ nghĩa
-- So sánh với các hình thức dân chủ khác
-- Vai trò của nhân dân trong hệ thống dân chủ xã hội chủ nghĩa
-
-II. NHÀ NƯỚC XÃ HỘI CHỦ NGHĨA
-- Bản chất và đặc điểm của nhà nước xã hội chủ nghĩa
-- Chức năng và nhiệm vụ của nhà nước xã hội chủ nghĩa
-- Cơ cấu tổ chức và nguyên tắc hoạt động
-- Mối quan hệ giữa nhà nước và xã hội
-
-III. DÂN CHỦ XÃ HỘI CHỦ NGHĨA VÀ NHÀ NƯỚC PHÁP QUYỀN XÃ HỘI CHỦ NGHĨA Ở VIỆT NAM
-- Thực tiễn xây dựng dân chủ xã hội chủ nghĩa ở Việt Nam
-- Đặc điểm của nhà nước pháp quyền xã hội chủ nghĩa Việt Nam
-- Hiến pháp và hệ thống pháp luật Việt Nam
-- Các cơ quan nhà nước và nguyên tắc tổ chức quyền lực
-- Vai trò của Đảng Cộng sản Việt Nam
-- Thành tựu và thách thức trong quá trình phát triển
-
-Hãy trả lời bằng tiếng Việt, cung cấp thông tin chính xác, khách quan và có tính giáo dục cao.`;
+      // Short and focused system prompt
+      const systemPrompt = `Bạn là trợ lý học thuật về hệ thống chính trị Việt Nam và chủ nghĩa xã hội.
+Trả lời ngắn gọn, chính xác, cân bằng và bằng tiếng Việt.
+Ưu tiên ba trục chủ đề khi phù hợp: (1) Dân chủ XHCN; (2) Nhà nước XHCN; (3) Dân chủ XHCN và Nhà nước pháp quyền XHCN ở Việt Nam.`;
 
       const fullMessage = `${systemPrompt}\n\nNgười dùng hỏi: ${message}`;
       
