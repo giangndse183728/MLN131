@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Message } from '@/features/chatbot/types';
 import { sendMessage } from '@/features/chatbot/services';
 import ChatBubble from '@/features/chatbot/components/chat-bubble';
@@ -13,15 +13,46 @@ const ChatSpeedDial: React.FC = () => {
     { role: 'assistant', content: 'Chào mừng bạn đến với trợ lý AI MLN! Tôi có thể giúp gì cho bạn hôm nay?' },
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [questionsUsed, setQuestionsUsed] = useState<number>(0);
+  const QUESTIONS_LIMIT = 3;
+
+  // Load usage count from localStorage on mount
+  useEffect(() => {
+    try {
+      const stored = typeof window !== 'undefined' ? window.localStorage.getItem('chatQuestionsUsed') : null;
+      const parsed = stored ? parseInt(stored, 10) : 0;
+      setQuestionsUsed(Number.isNaN(parsed) ? 0 : parsed);
+    } catch {}
+  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
 
   const handleSendMessage = async (message: string) => {
+    // Enforce question limit
+    if (questionsUsed >= QUESTIONS_LIMIT) {
+      const limitMessage: Message = {
+        role: 'assistant',
+        content: 'Bạn đã dùng hết 3 câu hỏi cho phiên này.'
+      };
+      setMessages((prev) => [...prev, limitMessage]);
+      return;
+    }
+
     // Add user message to chat
     const userMessage: Message = { role: 'user', content: message };
     setMessages((prev) => [...prev, userMessage]);
+    // Increment and persist usage count
+    setQuestionsUsed((prev) => {
+      const next = prev + 1;
+      try {
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('chatQuestionsUsed', String(next));
+        }
+      } catch {}
+      return next;
+    });
     
     setIsLoading(true);
     
@@ -93,8 +124,13 @@ const ChatSpeedDial: React.FC = () => {
           </div>
           
           {/* Input area with newspaper style border */}
-          <div className="border-t-2 border-[#600] bg-[#f8f4e8]">
-            <ChatInput onSendMessage={handleSendMessage} disabled={isLoading} />
+      <div className="border-t-2 border-[#600] bg-[#f8f4e8]">
+            <ChatInput onSendMessage={handleSendMessage} disabled={isLoading || questionsUsed >= QUESTIONS_LIMIT} />
+            {questionsUsed >= QUESTIONS_LIMIT && (
+              <div className="px-4 py-2 text-[12px] text-red-800 bg-red-50 border-t border-red-200">
+                Bạn đã đạt giới hạn 3 câu hỏi.
+              </div>
+            )}
           </div>
         </div>
       ) : (
