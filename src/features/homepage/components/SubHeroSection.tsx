@@ -101,7 +101,7 @@ const SubHeroSection = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <div className="h-[1px] w-12 bg-white mr-3"></div>
-                <p className="font-serif italic text-white/90">Bản chất chế độ ta, vừa mục tiêu vừa động lực phát triển</p>
+                <p className="font-serif italic text-white/90">Bản chất chế độ ta, vừa mục tiêu vừa động lực phát triển thêm</p>
               </MotionDiv>
             </FadeUp>
           </FadeUp>
